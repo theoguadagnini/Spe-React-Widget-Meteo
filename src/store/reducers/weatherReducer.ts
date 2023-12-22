@@ -1,6 +1,6 @@
 import fetchWeather from "../asyncActions/fecthWeather";
 
-import { WeatherData } from "../../@types/weather";
+import WeatherData from "../../@types/weather";
 import { createReducer } from "@reduxjs/toolkit";
 
 interface WeatherState {

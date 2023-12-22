@@ -4,7 +4,7 @@ import { RootState, AppDispatch } from "../../store";
 
 import fetchWeather from "../../store/asyncActions/fecthWeather";
 
-import Card from "../Card/index";
+import WidgetMeteo from "../WidgetMeteo/index";
 
 import "./App.scss";
 
@@ -13,14 +13,14 @@ function App() {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(fetchWeather("London"));
+    dispatch(fetchWeather("New York"));
   }, [dispatch]);
 
   return (
     <div className="app">
       {weather && (
-        <Card
-          location={weather.name}
+        <WidgetMeteo
+          city={weather.name}
           icon={weather.icon}
           weather={weather.weather}
           temperature={Math.round(weather.main.temp - 273.15)}
